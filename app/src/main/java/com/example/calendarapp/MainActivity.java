@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements WeekView.EventCli
     private HashMap<String,List<WeekViewEvent>> allEvents = new HashMap<String,List<WeekViewEvent>>();
     private List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
     boolean eventFlag = false;
+    boolean addFlag = false;
     private int mWeekViewType = TYPE_THREE_DAY_VIEW;
     private String mName;
     private int mYear, mMonth, mDay, mStartHour, mStartMin, mEndHour, mEndMin;
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements WeekView.EventCli
             int startMin = prefs.getInt("startMin", 0);
             int endMin = prefs.getInt("endMin", 0);
 
-            addEvent(name, year, month, day, startHour, endHour, startMin, endMin);
+            //addEvent(name, year, month, day, startHour, endHour, startMin, endMin);
 
         }
 
@@ -267,8 +268,9 @@ public class MainActivity extends AppCompatActivity implements WeekView.EventCli
         event.setColor(getResources().getColor(R.color.event_color_02));
         events.add(event);
 
-        allEvents.put("add" + "-" + "event", events);
+        allEvents.put(mMonth + "-" + mYear, events);
 
+        addFlag = true;
     }
 
     @Override
@@ -277,6 +279,14 @@ public class MainActivity extends AppCompatActivity implements WeekView.EventCli
         if(!eventFlag) {
             if (allEvents.containsKey(mMonth + "-" + mYear)) {
                 eventFlag = true;
+                return allEvents.get(mMonth + "-" + mYear);
+            }
+        }
+
+        if(addFlag) {
+            if (allEvents.containsKey(mMonth + "-" + mYear)) {
+                addFlag = false;
+                Log.i("Saved state:", "Called");
                 return allEvents.get(mMonth + "-" + mYear);
             }
         }
