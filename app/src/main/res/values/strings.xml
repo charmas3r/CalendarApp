@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CalendarApp</string>
+    <string name="action_today">Today</string>
+    <string name="action_day_view">Day view</string>
+    <string name="action_three_day_view">3 day view</string>
+    <string name="action_week_view">Week view</string>
+    <string name="title_activity_basic">Basic Example</string>
+    <string name="title_activity_asynchronous">Asynchronous Events</string>
+    <string name="async_error">Could not download events from the internet</string>
+
+
+    <string name="add_activity"> Add a item to the list </string>
+    <string name="add_event_name">event name</string>
+    <string name="add_event_notes">event notes</string>
+    <string name="add_event_date">Event date</string>
+    <string name="add_start_time">Start time</string>
+    <string name="add_end_time">End time</string>
+    <string name="add_date_picker_title">Choose date</string>
+
+    <string name="add_submit">submit</string>
+</resources>
