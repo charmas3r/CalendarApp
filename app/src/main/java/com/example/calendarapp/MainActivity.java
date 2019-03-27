@@ -1,5 +1,6 @@
 package com.example.calendarapp;
 
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -116,6 +117,8 @@ public class MainActivity extends AppCompatActivity implements WeekView.EventCli
             int endHour = prefs.getInt("endHour", 0);
             int startMin = prefs.getInt("startMin", 0);
             int endMin = prefs.getInt("endMin", 0);
+
+            Log.i("pref hour:", Integer.toString(startHour));
 
             //addEvent(name, year, month, day, startHour, endHour, startMin, endMin);
 
