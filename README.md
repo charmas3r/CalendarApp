@@ -7,6 +7,8 @@ Your end time must be after your start time for the event.
 
 The weekview will display your event.
 
+You can delete your event by long-pressing on it
+
 On rotate your event will be saved to SavedInstanceState outbundle and retrieved onRestoreInstanceState. 
 
 BUGS:
